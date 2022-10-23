@@ -4,7 +4,7 @@ import React from 'react'
 const initState = {
     jobTitle: "",
     companyName: "",
-    salary: 0,
+    salary: "",
     joiningDataTime: "",
     description: ""
 }

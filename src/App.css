@@ -1,3 +1,324 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+* {
+  margin: 0px;
+}
+
+label {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12.1097px;
+  line-height: 15px;
+  color: #6c6c6c;
+}
+
+hr {
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  height: 70px;
+  left: 0px;
+  top: 47px;
+  background: #ffffff;
+  border: 1px solid #d9d9d9;
+}
+
+.add-btn {
+  position: absolute;
+  width: 120px;
+  height: 36px;
+  left: 1300px;
+  top: 64px;
+
+  background: #506cff;
+  box-shadow: 0px 4px 6px 1px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+  border: 0px;
+}
+
+.container {
+  position: relative;
+}
+
+.card-container {
+  position: relative;
+  top: 150px;
+}
+
+.card-div {
+  box-sizing: border-box;
+  position: relative;
+  width: 407px;
+  height: 228px;
+  background: #ffffff;
+  border: 1px solid #d9d9d9;
+  box-shadow: 2px 2px 21px 2px rgba(0, 0, 0, 0.15);
+}
+
+.show-div {
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 430px 430px;
+  grid-row-gap: 25px;
+  width: 50%;
+  position: relative;
+  left: 465px;
+  justify-items: center;
+}
+
+.back-btn {
+  position: absolute;
+  width: 120px;
+  height: 36px;
+  left: 250px;
+  top: 64px;
+  background-color: #ffffff;
+  border: 0px;
+  color: black;
+  font-size: x-large;
+}
+
+.container-form {
+  position: absolute;
+  width: 505px;
+  height: 481px;
+  left: 700px;
+  top: 147px;
+
+  background: #ffffff;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.job-title-in input {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 342.7px;
+  height: 36.33px;
+  left: 82px;
+  top: 92.95px;
+
+  background: #f3f3f3;
+  border: 1.21097px solid #d9d9d9;
+}
+
+.company-name-in input {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 342.7px;
+  height: 36.33px;
+  left: 82px;
+  top: 157.14px;
+
+  background: #f3f3f3;
+  border: 1.21097px solid #d9d9d9;
+}
+
+.input-sm .salary-in input {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 156.22px;
+  height: 36.33px;
+  left: 82px;
+  top: 221.32px;
+
+  background: #f3f3f3;
+  border: 1.21097px solid #d9d9d9;
+}
+
+.input-sm .date-in input {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 168.32px;
+  height: 36.33px;
+  left: 255.17px;
+  top: 221.32px;
+
+  background: #f3f3f3;
+  border: 1.21097px solid #d9d9d9;
+}
+
+.description-in input {
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 342.7px;
+  height: 94px;
+  left: 82px;
+  top: 285.5px;
+
+  background: #f3f3f3;
+  border: 1.21097px solid #d9d9d9;
+}
+
+.submit-btn {
+  position: absolute;
+  width: 120px;
+  height: 36px;
+  left: 193px;
+  top: 409px;
+
+  background: #506cff;
+  box-shadow: 0px 4px 6px 1px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+  border: none;
+}
+
+.container-form > h3 {
+  position: absolute;
+  width: 65px;
+  height: 19px;
+  left: 220px;
+  top: 35px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+
+  color: #000000;
+}
+
+.job-title-in > label {
+  position: absolute;
+  width: 50px;
+  height: 15px;
+  left: 83.21px;
+  top: 76px;
+}
+
+.company-name-in > label {
+  position: absolute;
+  width: 92px;
+  height: 15px;
+  left: 83.21px;
+  top: 140.18px;
+}
+
+.input-sm > .salary-in > label {
+  position: absolute;
+  width: 36px;
+  height: 15px;
+  left: 83.21px;
+  top: 204.36px;
+}
+
+.input-sm > .date-in > label {
+  position: absolute;
+  width: 68px;
+  height: 15px;
+  left: 255.17px;
+  top: 204.36px;
+}
+
+.description-in > label {
+  position: absolute;
+  width: 66px;
+  height: 15px;
+  left: 83.21px;
+  top: 268.54px;
+}
+
+div.title {
+  position: absolute;
+  width: 168px;
+  height: 19px;
+  left: 48px;
+  top: 20px;
+}
+
+div > span > .three-dots {
+  position: absolute;
+  left: 300px;
+  top: 0px;
+  right: auto;
+}
+
+div.company-name {
+  position: absolute;
+  width: 106px;
+  height: 17px;
+  left: 90px;
+  top: 57px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+
+  color: #000000;
+}
+
+.info-sm-sal {
+  position: absolute;
+  width: 85px;
+  height: 15px;
+  left: 48px;
+  top: 100px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  overflow: hidden;
+
+  color: #000000;
+}
+
+.info-sm-date {
+  position: absolute;
+  width: 160px;
+  height: 15px;
+  left: 200px;
+  top: 100px;
+  overflow: hidden;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+
+  color: #000000;
+}
+
+div.description {
+  position: absolute;
+  width: 312px;
+  height: 34px;
+  left: 48px;
+  top: 134px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+
+  color: #000000;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 15%;
+  left: 70%;
+  width: 80px;
+  padding: 10px;
+  background: #fff;
+  box-shadow: 3px 3px 10px 6px rgba(0, 0, 0, 0.06);
+  font-weight: 500;
+  color: #333;
+}
+
+.dropdown-content .dropdown-item {
+  background-color: #fff;
+  color: #000000;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}

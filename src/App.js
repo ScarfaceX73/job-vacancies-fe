@@ -4,9 +4,10 @@ import './App.css';
 import { fetchJob, createJob } from './service';
 import { Show } from './components/show';
 import { useAppContext } from "../src/context/AppContext"
+import { BiArrowBack } from "react-icons/bi"
 
 function App() {
-  const [addbtn, setAddBtn] = useState(false);
+  const [toggle, setToggle] = useState(false);
   const [jobData, setJobData] = useState([]);
   const [jobId, setJobId] = useState("");
 
@@ -37,7 +38,7 @@ function App() {
         await axios.put(`http://localhost:3002/update/${jobId}`, { ...state });
         clear();
         setJobId('');
-        setAddBtn(false);
+        setToggle(false);
         fetchData()
       } catch (error) {
         console.log(error);
@@ -46,7 +47,7 @@ function App() {
       try {
         await createJob(state);
         clear();
-        setAddBtn(false);
+        setToggle(false);
         fetchData();
       } catch (error) {
         console.log(error);
@@ -69,53 +70,62 @@ function App() {
       joiningDataTime: selectedData.joiningDataTime,
       description: selectedData.description,
     });
-    setAddBtn(true);
+    setToggle(true);
     setJobId(_id);
   };
 
   const handleClick = () => {
-    setAddBtn(current => !current);
+    setToggle(current => !current);
     clear();
   }
 
 
 
 
-  if (addbtn === true) {
+  if (toggle === true) {
     return (
-      <div>
+      <div className='container-main'>
         <div>
-          <div>
-            <div>
-              <div>
-                <hr />
-                <button onClick={handleClick}>back</button>
-                <hr />
-              </div>
-              <div style={{ width: "50%" }}>
-                <div className="">
-                  <div className="">
-                    <input type="text" className="" id="floatingInputGroup1" placeholder="Job title" value={jobTitle} onChange={(e) => {
-                      handleInputChange({ jobTitle: e?.target?.value })
-                    }} />
-                    <label for="floatingInputGroup1">Job Title</label>
-                  </div>
-                </div>
-                <input type="text" placeholder="Company Name" value={companyName} onChange={(e) => {
-                  handleInputChange({ companyName: e?.target?.value })
-                }} />
-                <input type="text" placeholder="Salary" value={salary} onChange={(e) => {
+          <div className='hr-div'>
+            <hr />
+            <button className='back-btn' onClick={handleClick}><BiArrowBack /></button>
+          </div>
+          <div className='container-form'>
+            <h3>Add Job</h3>
+
+            <div className="job-title-in">
+              <label>Job Title</label>
+              <input type="text" className="" id="floatingInputGroup1" value={jobTitle} onChange={(e) => {
+                handleInputChange({ jobTitle: e?.target?.value })
+              }} />
+            </div>
+            <div className="company-name-in">
+              <label>Company Name</label>
+              <input type="text" value={companyName} onChange={(e) => {
+                handleInputChange({ companyName: e?.target?.value })
+              }} />
+            </div>
+            <div className='input-sm'>
+              <div className='salary-in'>
+                <label>Salary</label>
+                <input type="text" value={salary} onChange={(e) => {
                   handleInputChange({ salary: e?.target?.value })
                 }} />
-                <input type="text" placeholder="date & time" value={joiningDataTime} onChange={(e) => {
+              </div>
+              <div className='date-in'>
+                <label>Date & Time</label>
+                <input type="text" value={joiningDataTime} onChange={(e) => {
                   handleInputChange({ joiningDataTime: e?.target?.value })
                 }} />
-                <input type="textarea" placeholder="Description" value={description} onChange={(e) => {
-                  handleInputChange({ description: e?.target?.value })
-                }} />
-                <button onClick={handleSubmit}>Submit</button>
               </div>
             </div>
+            <div className='description-in'>
+              <label>Description</label>
+              <input type="textarea" value={description} onChange={(e) => {
+                handleInputChange({ description: e?.target?.value })
+              }} />
+            </div>
+            <button className='submit-btn -btn' onClick={handleSubmit}>Submit</button>
           </div>
         </div>
       </div>
@@ -123,15 +133,16 @@ function App() {
   }
   else {
     return (
-      <div className="">
-        <div>
+      <div className="container-main">
+        <div className='container'>
           <hr />
-          <button onClick={handleClick}>add</button>
-          <hr />
-        </div>
-        <div className=''>
-          <div className=''>
-            <Show jobData={jobData} handleUpdate={handleUpdate} fetchData={fetchData} />
+          <div className="justify-content-end d-flex" >
+            <button className='btn add-btn' onClick={handleClick}>Add Job</button>
+          </div>
+          <div className='card-container'>
+            <div className='show-div'>
+              <Show jobData={jobData} handleUpdate={handleUpdate} fetchData={fetchData} />
+            </div>
           </div>
         </div>
       </div>
