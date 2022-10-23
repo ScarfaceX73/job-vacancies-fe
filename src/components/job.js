@@ -8,9 +8,7 @@ const JobCard = (props) => {
     const { item, handleUpdate, confirmDelete } = props
     const [isOpen, setIsOpen] = useState(false)
 
-    const handleDelete = () => {
 
-    }
     return (
         <>
             <div className='title info-lg info'>
@@ -21,7 +19,7 @@ const JobCard = (props) => {
                     <button className='dropdown-item btn' onClick={(e) => handleUpdate(item._id)}>
                         <AiOutlineEdit />Edit
                     </button>
-                    <button className='dropdown-item btn' onClick={(e) => handleDelete(item._id)}><MdDeleteOutline />Delete</button>
+                    <button className='dropdown-item btn' onClick={(e) => confirmDelete(item._id)}><MdDeleteOutline />Delete</button>
                 </div>
             </div>)}
 
